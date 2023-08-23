@@ -1,17 +1,27 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Dashboard, FAQ } from "./pages";
+import { HomeLayout, Dashboard, FAQ, Login } from "./pages";
 
 function App() {
 	const router = createBrowserRouter([
 		{
 			path: "/",
-			element: <Dashboard />,
-		},
-		{
-			path: "/faq",
-			element: <FAQ />,
+			element: <HomeLayout />,
+			children: [
+				{
+					index: true,
+					element: <Dashboard />,
+				},
+				{
+					path: "faq",
+					element: <FAQ />,
+				},
+				{
+					path: "login",
+					element: <Login />,
+				},
+			],
 		},
 	]);
 
