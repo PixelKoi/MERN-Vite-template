@@ -1,13 +1,16 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
+
 function App() {
-  return (
-    <ChakraProvider>
-      <Navbar />
-      <p>Hello User</p>
-    </ChakraProvider>
-  );
+	return (
+		<BrowserRouter>
+			<ChakraProvider>
+				<AppRouter />
+			</ChakraProvider>
+		</BrowserRouter>
+	);
 }
 
 export default App;
