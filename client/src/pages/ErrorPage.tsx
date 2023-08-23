@@ -1,5 +1,15 @@
+import { Link, useRouteError } from "react-router-dom";
+
 const ErrorPage = () => {
-	return <div>Error</div>;
+	const error = useRouteError();
+	console.log(error);
+
+	return (
+		<div>
+			<h1>Error Page</h1>
+			<Link to="/">Back to Home</Link>
+		</div>
+	);
 };
 
 export default ErrorPage;
